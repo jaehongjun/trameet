@@ -1,0 +1,8 @@
+type Mutation {
+  createBoards(
+    location: String!
+    caption: String!
+    content: String!
+    file: String
+  ): Board!
+}
