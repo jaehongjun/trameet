@@ -1,0 +1,8 @@
+type Mutation {
+  editUser(
+    firstName: String
+    lastName: String
+    bio: String
+    avatar: String
+  ): Boolean
+}
