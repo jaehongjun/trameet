@@ -1,5 +1,5 @@
 type Mutation {
-  createBoards(
+  createBoard(
     location: String!
     caption: String!
     content: String!

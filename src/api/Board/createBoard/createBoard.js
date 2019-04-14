@@ -3,7 +3,7 @@ import { prisma } from "../../../../generated/prisma-client";
 
 export default {
   Mutation: {
-    createBoards: async (_, args, { request }) => {
+    createBoard: async (_, args, { request }) => {
       isAuthenticated(request);
       const { location, caption, content, files } = args;
       const { user } = request;
@@ -19,6 +19,7 @@ export default {
           },
           content
         });
+        console.log(board);
         return board;
       } catch (error) {
         console.log(error);
