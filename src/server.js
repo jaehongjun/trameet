@@ -2,11 +2,12 @@ import { GraphQLServer } from "graphql-yoga";
 import schema from "./schema";
 import logger from "morgan";
 import { authenticateJwt } from "./passport";
+import { isAuthenticated } from "./middlewares";
 const PORT = 4000;
 
 const server = new GraphQLServer({
   schema,
-  context: ({ request }) => ({ request })
+  context: ({ request }) => ({ request, isAuthenticated })
 });
 
 server.express.use(logger("dev"));
