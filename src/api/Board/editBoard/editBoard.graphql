@@ -1,0 +1,14 @@
+enum ACTIONS {
+  EDIT
+  DELETE
+}
+
+type Mutation {
+  editBoard(
+    id: String!
+    caption: String
+    location: String
+    content: String
+    action: ACTIONS
+  ): Board!
+}
